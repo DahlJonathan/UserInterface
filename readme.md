@@ -2,11 +2,6 @@
 
 A real-time system to control races and inform spectators.
 
-
-## Before starting the program
-
-- Install Golang
-
 ### Access keys
 
 Front Desk  
