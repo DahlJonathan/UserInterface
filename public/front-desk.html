@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front Desk</title>
+    <link rel="stylesheet" href="css/front-desk.css" />
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Login Section -->
+        <div id="login" class="form-container">
+            <h2>Login to front desk interface</h2>
+            <input type="password" id="accessKey" placeholder="Enter Access Key">
+            <button id="loginButton">Login</button>
+            <div id="loginMessage" style="color: red; margin-top: 10px;"></div>
+        </div>
+
+        <!-- Race Session Management -->
+        <div id="frontDeskApp" class="form-container" style="display: none;">
+            <h2>Manage Race Sessions</h2>
+            <div id="message" class="message"></div>
+            <div id="message1" class="message"></div>
+            <div id="message2" class="message"></div>
+            <div id="message3" class="message"></div>
+            <div id="message4" class="message"></div>
+            <div class="session-name">
+                <input type="text" id="sessionName" placeholder="Session Name" required>
+                <button id="addSessionButton">Add Session</button>
+            </div>
+            <div id="driversList">
+                <h4>Drivers</h4>
+                <div class="driver-entry">
+                    <input type="text" class="driverName" placeholder="Driver Name" required>
+                    <button class="removeDriverButton">Remove</button>
+                </div>
+            </div>
+            <button id="addDriverFieldButton">Add Driver</button>
+            <div id="sessions"></div>
+        </div>
+    </div>
+    <script type="module" src="js/front-desk/main.js" defer></script>
+</body>
+
+</html>

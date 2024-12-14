@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Countdown</title>
+    <link rel="stylesheet" href="css/race-countdown.css" />
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Countdown to End</h2>
+        <div id="countdownCircle"> <!-- Changed id to countdownCircle -->
+            <svg viewBox="0 0 100 100" stroke-width="3">
+                <circle cx="50" cy="50" r="45"></circle>
+                <circle cx="50" cy="50" r="45" pathLength="1"></circle>
+            </svg>
+            <div id="countdown">10:00</div> <!-- Kept id as countdown -->
+        </div>
+    </div>
+    <button class="fullscreen-btn" onclick="toggleFullScreen('countdownCircle')">Full Screen Countdown</button>
+    <script type="module" src="js/race-countdown/main.js"></script>
+    <script src="js/fullscreen.js"></script>
+</body>
+
+</html>

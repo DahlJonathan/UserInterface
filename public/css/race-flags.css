@@ -1,0 +1,271 @@
+/* Import the Orbitron font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+/* Style the body element */
+body {
+  font-family: "Orbitron", sans-serif; /* Use Orbitron font */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+  background-color: #1e2329; /* Set background color to black */
+  color: #ffffff; /* Set text color to white */
+}
+
+/* Style the container element */
+.container {
+  width: 90%; /* Set width to 90% */
+  max-width: 800px; /* Set maximum width */
+  text-align: center; /* Center text */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Semi-transparent white background */
+  padding: 30px; /* Add padding inside the container */
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3); /* Add blue glow effect */
+  border-radius: 20px; /* Round the corners */
+  position: relative; /* Position relative for absolute positioning of children */
+}
+
+/* Style h2 elements */
+h2 {
+  font-size: 2.5em; /* Set font size */
+  margin-bottom: 20px; /* Add margin to the bottom */
+  color: #00aaff; /* Set text color to light blue */
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.7); /* Add text shadow for glow effect */
+}
+
+/* Style the animated flags container */
+#animated-flags {
+  width: 380px; /* Set width */
+  height: 350px; /* Set height */
+  display: flex; /* Use flexbox for layout */
+  overflow: hidden; /* Hide overflow content */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  margin: 0 auto; /* Center the element with margin */
+}
+
+/* Style the column container */
+.column {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange items in a column */
+  margin-right: -4px; /* Add negative margin to the right */
+}
+
+/* Style the flag unit */
+.flag-unit {
+  width: 13px; /* Set width */
+  height: 10px; /* Set height */
+  animation: vertical 1s infinite; /* Apply vertical animation */
+}
+
+/* Define keyframes for vertical animation */
+@keyframes vertical {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  } /* Initial and final position */
+  25% {
+    transform: translate(
+      calc(var(--displacement) * -2),
+      calc(var(--displacement) * -1)
+    );
+  } /* Intermediate position */
+  75% {
+    transform: translate(
+      calc(var(--displacement) * 2),
+      calc(var(--displacement) * 4)
+    );
+  } /* Intermediate position */
+}
+
+/* Style the fullscreen button */
+button.fullscreen-btn {
+  position: fixed; /* Fix the position */
+  top: 20px; /* Position 20px from the top */
+  right: 20px; /* Position 20px from the right */
+  padding: 15px 30px; /* Add padding inside the button */
+  font-size: 1.2em; /* Set font size */
+  cursor: pointer; /* Change cursor to pointer */
+  background-color: rgba(0, 123, 255, 0.8); /* Set background color */
+  color: #fff; /* Set text color to white */
+  border: none; /* Remove border */
+  border-radius: 25px; /* Round the corners */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+/* Style the fullscreen button on hover */
+button.fullscreen-btn:hover {
+  background-color: rgba(0, 86, 179, 0.9); /* Change background color */
+  transform: translateY(-3px); /* Move button up */
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5); /* Add shadow for depth */
+}
+
+/* Traffic light section styling */
+#flag-container {
+  position: relative; /* Position relative for absolute positioning of children */
+  width: 380px; /* Set width */
+  height: 350px; /* Set height */
+  margin: 0 auto; /* Center the element with margin */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+}
+
+/* Style the traffic light and go message */
+#traffic-light,
+#go-message {
+  position: absolute; /* Position absolute to center within parent */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust position to be exactly centered */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  z-index: 10; /* Set z-index for layering */
+}
+
+/* Style the traffic light */
+#traffic-light {
+  flex-direction: row; /* Arrange items in a row */
+  background-color: rgba(
+    51,
+    51,
+    51,
+    0.8
+  ); /* Semi-transparent dark background */
+  border-radius: 15px; /* Round the corners */
+  padding: 10px; /* Add padding inside the container */
+  width: 300px; /* Set width */
+  height: 100px; /* Set height */
+  justify-content: space-around; /* Space items evenly */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+/* Style the individual lights */
+.light {
+  width: 80px; /* Set width */
+  height: 80px; /* Set height */
+  border-radius: 50%; /* Make the light circular */
+  margin: 0 5px; /* Add margin to the sides */
+  opacity: 0.3; /* Set initial opacity */
+  transition: opacity 0.3s; /* Smooth transition for opacity */
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5); /* Add inner shadow */
+}
+
+/* Style the active light */
+.light.active {
+  opacity: 1; /* Set full opacity */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+    inset 0 0 15px rgba(0, 0, 0, 0.3); /* Add outer and inner shadow */
+}
+
+/* Style the red light */
+.red {
+  background-color: #ff0000;
+} /* Set background color to red */
+
+/* Style the yellow light */
+.yellow {
+  background-color: #ffff00;
+} /* Set background color to yellow */
+
+/* Style the green light */
+.green {
+  background-color: #00ff00;
+} /* Set background color to green */
+
+/* Style the traffic light top part */
+#traffic-light::before {
+  content: ""; /* Add empty content */
+  position: absolute; /* Position absolute */
+  top: -10px; /* Position 10px from the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust position to be exactly centered */
+  width: 60px; /* Set width */
+  height: 20px; /* Set height */
+  background-color: rgba(
+    51,
+    51,
+    51,
+    0.8
+  ); /* Semi-transparent dark background */
+  border-radius: 10px 10px 0 0; /* Round the top corners */
+}
+
+/* Style the go message */
+#go-message {
+  font-size: 72px; /* Set font size */
+  font-weight: bold; /* Make text bold */
+  color: #00ff00; /* Set text color to green */
+  text-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Add green glow effect */
+}
+
+/* Style the footer */
+footer {
+  position: fixed; /* Fix the position */
+  right: 1em; /* Position 1em from the right */
+  bottom: 1em; /* Position 1em from the bottom */
+  color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Set text color to semi-transparent white */
+}
+
+/* Style links inside the footer */
+footer a {
+  color: #00aaff; /* Set link color to light blue */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+footer a:hover {
+  color: #ffffff; /* Change color on hover */
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.7); /* Add glow effect on hover */
+}
+
+/* Fullscreen styles */
+:fullscreen .container {
+  max-width: none; /* Remove maximum width in fullscreen */
+  width: 100vw; /* Set width to 100% of the viewport width */
+  height: 100vh; /* Set height to 100% of the viewport height */
+  display: flex; /* Use flexbox for layout */
+  align-items: center;
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Center items vertically */
+  border-radius: 0; /* Remove border radius in fullscreen */
+}
+
+:fullscreen #animated-flags {
+  width: 80vw; /* Full viewport width */
+  height: 80vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+:fullscreen .flag-unit {
+  width: calc(13px * 3); /* Triple the width of flag units */
+  height: calc(10px * 3); /* Triple the height of flag units */
+}
+
+:fullscreen #traffic-light {
+  width: 80vw;
+  height: 50vh;
+  
+}
+
+:fullscreen .light {
+  width: 70vw;
+  height: 45vh;
+}
+
+:fullscreen #go-message {
+  font-size: 500px; /* Optional: Adjust size for better visibility */
+}
